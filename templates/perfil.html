@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil{% endblock %}
+
+{% block content %}
+<section class="content-section profile">
+    <p class="eyebrow">Cuenta de usuario</p>
+    <h1>Perfil</h1>
+    <p>Usuario autenticado: <strong>{{ usuario }}</strong></p>
+    <a class="button secondary" href="{{ url_for('logout') }}">Cerrar sesión</a>
+</section>
+{% endblock %}

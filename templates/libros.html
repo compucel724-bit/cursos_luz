@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Libros{% endblock %}
+
+{% block content %}
+<section class="content-section">
+    <p class="eyebrow">Catálogo</p>
+    <h1>Libros disponibles</h1>
+    <div class="book-grid">
+        {% for libro in libros %}
+            <article class="book-card">
+                <h2>{{ libro.titulo }}</h2>
+                <p>Autor: {{ libro.autor }}</p>
+                {% if libro.disponibles > 0 %}
+                    <p class="availability available">Disponible: {{ libro.disponibles }} ejemplares</p>
+                {% else %}
+                    <p class="availability unavailable">No disponible</p>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
