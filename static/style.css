@@ -164,6 +164,89 @@ input {
     color: var(--color-error);
 }
 
+.profile {
+    background: linear-gradient(135deg, #1e1633 0%, #2f2348 35%, #4a2d62 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 26px;
+    box-shadow: 0 20px 50px rgba(18, 9, 39, 0.45);
+    color: #f6ebff;
+    padding: 32px;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    padding: 24px;
+    backdrop-filter: blur(2px);
+}
+
+.profile .eyebrow {
+    color: #f7b8ff;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.profile h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    margin-bottom: 22px;
+    text-shadow: 0 2px 12px rgba(181, 122, 255, 0.5);
+}
+
+.profile-user {
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), rgba(161, 110, 255, 0.16));
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    padding: 20px 18px;
+}
+
+.profile-user span {
+    color: #f2d8ff;
+    font-weight: 700;
+}
+
+.profile-user strong {
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.profile-actions {
+    margin-top: 22px;
+}
+
+.profile .button.secondary {
+    background: linear-gradient(135deg, #ff7e5f 0%, #c86bff 100%);
+    border-radius: 999px;
+    box-shadow: 0 12px 25px rgba(200, 107, 255, 0.35);
+    font-weight: 800;
+    padding: 14px 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile .button.secondary:hover {
+    background: linear-gradient(135deg, #ff6b6b 0%, #a75dff 100%);
+    box-shadow: 0 16px 30px rgba(200, 107, 255, 0.45);
+    transform: translateY(-1px);
+}
+
+.author-signature {
+    color: #f7d8ff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 22px;
+    text-align: right;
+    letter-spacing: 0.08em;
+}
+
 @media (max-width: 700px) {
     .navbar,
     .nav-links {
@@ -173,5 +256,14 @@ input {
 
     .book-grid {
         grid-template-columns: 1fr;
+    }
+
+    .profile {
+        padding: 20px;
+    }
+
+    .profile-user {
+        align-items: flex-start;
+        flex-direction: column;
     }
 }
