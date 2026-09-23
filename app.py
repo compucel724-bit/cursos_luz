@@ -1,23 +1,30 @@
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 
 app = Flask(__name__)
-app.secret_key = "clave-secreta-biblioteca"
+app.secret_key = "clave-secreta-portal-academico"
 
 usuarios = {
-    "carlos": "1111",
-    "laura": "2222",
-    "diego": "3333"
+    "juan": "1234",
+    "maria": "abcd",
+    "pedro": "2026"
 }
 
-libros = [
-    {"titulo": "Python desde cero", "autor": "Juan Pérez", "disponibles": 4},
-    {"titulo": "Desarrollo Web", "autor": "María López", "disponibles": 2},
-    {"titulo": "Inteligencia Artificial", "autor": "Pedro García", "disponibles": 0}
+cursos = [
+    {"nombre": "Programación Web", "docente": "Luis Pérez", "cupos": 15},
+    {"nombre": "Bases de Datos", "docente": "Ana López", "cupos": 8},
+    {"nombre": "Inteligencia Artificial", "docente": "Carlos Rojas", "cupos": 0}
 ]
+
 
 @app.route("/")
 def index():
-    return render_template("index.html", ultimo_usuario=request.cookies.get("ultimo_usuario"))
+    usuario_preferido = request.cookies.get("usuario_preferido")
+    if usuario_preferido:
+        mensaje = f"Bienvenido nuevamente, {usuario_preferido}."
+    else:
+        mensaje = "Bienvenido al Portal Académico."
+    return render_template("index.html", mensaje=mensaje, usuario_preferido=usuario_preferido)
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -27,8 +34,8 @@ def login():
 
         if usuarios.get(usuario) == contrasena:
             session["usuario"] = usuario
-            respuesta = redirect(url_for("libros_disponibles"))
-            respuesta.set_cookie("ultimo_usuario", usuario)
+            respuesta = redirect(url_for("cursos_disponibles"))
+            respuesta.set_cookie("usuario_preferido", usuario)
             flash(f"Bienvenido, {usuario}.", "success")
             return respuesta
 
@@ -36,9 +43,16 @@ def login():
 
     return render_template("login.html")
 
+
+@app.route("/cursos")
+def cursos_disponibles():
+    return render_template("cursos.html", cursos=cursos)
+
+
 @app.route("/libros")
 def libros_disponibles():
-    return render_template("libros.html", libros=libros)
+    return redirect(url_for("cursos_disponibles"))
+
 
 @app.route("/perfil")
 def perfil():
@@ -48,17 +62,20 @@ def perfil():
 
     return render_template("perfil.html", usuario=session["usuario"])
 
+
 @app.route("/logout")
 def logout():
     session.clear()
     flash("La sesión fue cerrada correctamente.", "success")
     return redirect(url_for("index"))
 
+
 @app.route("/eliminar-cookie")
 def eliminar_cookie():
     respuesta = redirect(url_for("index"))
-    respuesta.delete_cookie("ultimo_usuario")
+    respuesta.delete_cookie("usuario_preferido")
     return respuesta
+
 
 if __name__ == "__main__":
     app.run(debug=True)

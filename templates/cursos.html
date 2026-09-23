@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Cursos{% endblock %}
+
+{% block content %}
+<section class="content-section">
+    <p class="eyebrow">Oferta académica</p>
+    <h1>Cursos disponibles</h1>
+    <div class="book-grid">
+        {% for curso in cursos %}
+            <article class="book-card">
+                <h2>{{ curso.nombre }}</h2>
+                <p>Docente: {{ curso.docente }}</p>
+                {% if curso.cupos > 0 %}
+                    <p class="availability available">Curso disponible</p>
+                {% else %}
+                    <p class="availability unavailable">Curso lleno</p>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

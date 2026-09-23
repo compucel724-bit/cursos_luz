@@ -1,34 +1,36 @@
 :root {
-    --fondo: #f3f3f3;
-    --panel: #ffffff;
-    --principal: #3d4d6e;
-    --texto: #222222;
-    --borde: #dcdcdc;
-    --boton: #5b6b8b;
-    --boton2: #8998b3;
-    --exito: #3c7b49;
-    --error: #9d3d3d;
+    --fondo: #f8eefc;
+    --panel: #fff8ff;
+    --principal: #5c3a8e;
+    --secundario: #d94ea8;
+    --resaltado: #f2b7d4;
+    --texto: #2f1f3d;
+    --borde: #e3c7f5;
+    --boton: #7b4bbf;
+    --boton2: #e65ca6;
+    --exito: #1d8f69;
+    --error: #b93b63;
 }
 
 * { box-sizing: border-box; }
 
 body {
     margin: 0;
-    background: var(--fondo);
+    background: linear-gradient(180deg, #f9f1ff 0%, #fff8fb 100%);
     color: var(--texto);
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
 }
 
 .site-header {
-    background: #eaeaea;
-    border-bottom: 1px solid var(--borde);
+    background: linear-gradient(90deg, var(--principal), #7d5ec9 52%, var(--secundario));
+    border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 
 .navbar {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 14px 16px;
+    padding: 18px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,28 +38,33 @@ body {
 
 .brand,
 .nav-links a {
-    color: var(--principal);
+    color: #fff;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .nav-links {
     display: flex;
-    gap: 14px;
+    gap: 18px;
+    align-items: center;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 24px 16px 40px;
+    padding: 28px 18px 40px;
 }
 
 .hero,
 .content-section,
 .form-card,
-.book-card {
+.book-card,
+.profile-card {
     background: var(--panel);
     border: 1px solid var(--borde);
-    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(124, 76, 186, 0.08);
+    padding: 24px;
     margin-bottom: 18px;
 }
 
@@ -67,88 +74,87 @@ h1, h2 {
 }
 
 .eyebrow {
-    color: var(--principal);
-    font-weight: bold;
+    color: var(--secundario);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
 }
 
 .button {
     display: inline-block;
-    background: var(--boton);
-    color: white;
+    background: linear-gradient(135deg, var(--boton), var(--boton2));
+    color: #fff;
     text-decoration: none;
-    padding: 10px 14px;
-    border-radius: 4px;
+    padding: 10px 18px;
+    border-radius: 999px;
     margin-top: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
 }
 
 .button.secondary {
-    background: var(--boton2);
-    color: #fff;
+    background: linear-gradient(135deg, var(--secundario), #f58cc0);
 }
 
 .form-card {
-    max-width: 500px;
+    max-width: 520px;
 }
 
 form {
     display: grid;
-    gap: 8px;
+    gap: 12px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--texto);
 }
 
 input {
-    padding: 9px;
+    padding: 10px 12px;
     border: 1px solid var(--borde);
-    border-radius: 4px;
+    background: #fff;
+    border-radius: 10px;
 }
 
 .book-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .available { color: var(--exito); font-weight: bold; }
 .unavailable { color: var(--error); font-weight: bold; }
 
 .alert {
-    border: 1px solid var(--borde);
-    background: #f8f8f8;
-    padding: 10px 12px;
+    border-radius: 12px;
+    padding: 12px 15px;
     margin-bottom: 12px;
+    border: 1px solid var(--borde);
+    background: #fff0fa;
 }
 
 .alert.success { color: var(--exito); }
 .alert.error { color: var(--error); }
 
 .profile {
-    background: #f7f7f7;
+    background: linear-gradient(180deg, #fffafc 0%, #f8f0ff 100%);
     border: 1px solid var(--borde);
-    padding: 22px;
-}
-
-.profile-card {
-    background: #fff;
-    border: 1px solid var(--borde);
-    padding: 18px;
+    border-radius: 16px;
+    padding: 24px;
 }
 
 .profile-user {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f3f3f3;
+    background: #f7ecff;
     border: 1px solid var(--borde);
+    border-radius: 12px;
     padding: 12px 14px;
-    margin-top: 10px;
-}
-
-.author-signature {
-    text-align: right;
-    margin-top: 14px;
-    font-weight: bold;
-    color: var(--principal);
+    margin-top: 12px;
 }
 
 @media (max-width: 700px) {

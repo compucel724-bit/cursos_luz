@@ -4,19 +4,17 @@
 
 {% block content %}
 <section class="hero">
-    <p class="eyebrow">Biblioteca virtual</p>
-    <h1>Portal de Biblioteca</h1>
-    {% if ultimo_usuario %}
-        <p>Último usuario registrado: <strong>{{ ultimo_usuario }}</strong>.</p>
+    <p class="eyebrow">Plataforma estudiantil</p>
+    <h1>Portal Académico</h1>
+    <p>{{ mensaje }}</p>
+    {% if usuario_preferido %}
         <a class="button secondary" href="{{ url_for('eliminar_cookie') }}">Eliminar cookie</a>
-    {% else %}
-        <p>Bienvenido al Portal de Biblioteca.</p>
     {% endif %}
 </section>
 
 <section class="content-section">
-    <h2>Explora nuestra colección</h2>
-    <p>Consulta los libros disponibles e inicia sesión para acceder a tu perfil.</p>
-    <a class="button" href="{{ url_for('libros_disponibles') }}">Ver libros</a>
+    <h2>Explora nuestros cursos</h2>
+    <p>Consulta la oferta académica e inicia sesión para acceder a tu perfil.</p>
+    <a class="button" href="{{ url_for('cursos_disponibles') }}">Ver cursos</a>
 </section>
 {% endblock %}
