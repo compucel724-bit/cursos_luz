@@ -1,35 +1,34 @@
 :root {
-    --fondo: #f5efe8;
-    --panel: #fffdfb;
-    --principal: #543b73;
-    --secundario: #d97c5f;
-    --texto: #2f2f2f;
-    --borde: #e9d9c5;
-    --boton: #6a4c9c;
-    --boton2: #e49a72;
-    --exito: #2d7d50;
-    --error: #b94848;
+    --fondo: #f3f3f3;
+    --panel: #ffffff;
+    --principal: #3d4d6e;
+    --texto: #222222;
+    --borde: #dcdcdc;
+    --boton: #5b6b8b;
+    --boton2: #8998b3;
+    --exito: #3c7b49;
+    --error: #9d3d3d;
 }
 
 * { box-sizing: border-box; }
 
 body {
     margin: 0;
-    background: linear-gradient(180deg, #f5efe8 0%, #f7f3fb 100%);
+    background: var(--fondo);
     color: var(--texto);
     font-family: Arial, sans-serif;
     line-height: 1.5;
 }
 
 .site-header {
-    background: linear-gradient(90deg, var(--principal) 0%, #7a5aa0 100%);
-    color: #fff;
+    background: #eaeaea;
+    border-bottom: 1px solid var(--borde);
 }
 
 .navbar {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 18px 16px;
+    padding: 14px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,19 +36,19 @@ body {
 
 .brand,
 .nav-links a {
-    color: #fff;
+    color: var(--principal);
     text-decoration: none;
 }
 
 .nav-links {
     display: flex;
-    gap: 18px;
+    gap: 14px;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 30px 16px 50px;
+    padding: 24px 16px 40px;
 }
 
 .hero,
@@ -58,37 +57,34 @@ body {
 .book-card {
     background: var(--panel);
     border: 1px solid var(--borde);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 22px;
-    box-shadow: 0 8px 18px rgba(84, 59, 115, 0.05);
+    padding: 20px;
+    margin-bottom: 18px;
 }
 
-h1,
-h2 {
+h1, h2 {
     color: var(--principal);
     margin-top: 0;
 }
 
 .eyebrow {
-    color: var(--secundario);
+    color: var(--principal);
     font-weight: bold;
-    letter-spacing: 0.08em;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .button {
     display: inline-block;
-    background: linear-gradient(135deg, var(--boton) 0%, #8a68bd 100%);
-    color: #fff;
+    background: var(--boton);
+    color: white;
     text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 10px 14px;
+    border-radius: 4px;
     margin-top: 8px;
 }
 
 .button.secondary {
-    background: linear-gradient(135deg, var(--boton2) 0%, #f3b182 100%);
+    background: var(--boton2);
     color: #fff;
 }
 
@@ -101,18 +97,10 @@ form {
     gap: 8px;
 }
 
-label {
-    display: block;
-    margin-top: 8px;
-    font-weight: bold;
-    color: var(--principal);
-}
-
 input {
-    width: 100%;
-    padding: 10px;
+    padding: 9px;
     border: 1px solid var(--borde);
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .book-grid {
@@ -121,47 +109,28 @@ input {
     gap: 16px;
 }
 
-.book-card {
-    border-left: 5px solid var(--secundario);
-}
-
-.available {
-    color: var(--exito);
-    font-weight: bold;
-}
-
-.unavailable {
-    color: var(--error);
-    font-weight: bold;
-}
+.available { color: var(--exito); font-weight: bold; }
+.unavailable { color: var(--error); font-weight: bold; }
 
 .alert {
     border: 1px solid var(--borde);
-    background: #faf7f4;
+    background: #f8f8f8;
     padding: 10px 12px;
-    border-radius: 10px;
     margin-bottom: 12px;
 }
 
-.alert.success {
-    color: var(--exito);
-}
-
-.alert.error {
-    color: var(--error);
-}
+.alert.success { color: var(--exito); }
+.alert.error { color: var(--error); }
 
 .profile {
-    background: linear-gradient(135deg, #f6f0ff 0%, #fffaf5 100%);
+    background: #f7f7f7;
     border: 1px solid var(--borde);
-    border-radius: 18px;
-    padding: 24px;
+    padding: 22px;
 }
 
 .profile-card {
-    background: rgba(255,255,255,0.75);
+    background: #fff;
     border: 1px solid var(--borde);
-    border-radius: 12px;
     padding: 18px;
 }
 
@@ -169,16 +138,15 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f4edf8;
+    background: #f3f3f3;
     border: 1px solid var(--borde);
-    border-radius: 10px;
     padding: 12px 14px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .author-signature {
     text-align: right;
-    margin-top: 18px;
+    margin-top: 14px;
     font-weight: bold;
     color: var(--principal);
 }
