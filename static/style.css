@@ -1,13 +1,13 @@
 :root {
-    --fondo: #f8eefc;
-    --panel: #fff8ff;
-    --principal: #5c3a8e;
-    --secundario: #d94ea8;
-    --resaltado: #f2b7d4;
-    --texto: #2f1f3d;
-    --borde: #e3c7f5;
-    --boton: #7b4bbf;
-    --boton2: #e65ca6;
+    --fondo: #f4eee8;
+    --panel: #fffdf9;
+    --principal: #4b2e20;
+    --secundario: #c8662d;
+    --resaltado: #e7b17e;
+    --texto: #30221c;
+    --borde: #dfcdbd;
+    --boton: #7a4428;
+    --boton2: #d97832;
     --exito: #1d8f69;
     --error: #b93b63;
 }
@@ -16,14 +16,14 @@
 
 body {
     margin: 0;
-    background: linear-gradient(180deg, #f9f1ff 0%, #fff8fb 100%);
+    background: linear-gradient(180deg, #f2ebe4 0%, #fffaf5 100%);
     color: var(--texto);
     font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.6;
 }
 
 .site-header {
-    background: linear-gradient(90deg, var(--principal), #7d5ec9 52%, var(--secundario));
+    background: linear-gradient(90deg, #3f271b, var(--principal) 52%, #a95428);
     border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 
@@ -63,7 +63,7 @@ body {
     background: var(--panel);
     border: 1px solid var(--borde);
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(124, 76, 186, 0.08);
+    box-shadow: 0 10px 25px rgba(91, 52, 29, 0.09);
     padding: 24px;
     margin-bottom: 18px;
 }
@@ -95,7 +95,7 @@ h1, h2 {
 }
 
 .button.secondary {
-    background: linear-gradient(135deg, var(--secundario), #f58cc0);
+    background: linear-gradient(135deg, #b45128, #e28a43);
 }
 
 .form-card {
@@ -133,14 +133,14 @@ input {
     padding: 12px 15px;
     margin-bottom: 12px;
     border: 1px solid var(--borde);
-    background: #fff0fa;
+    background: #fff5eb;
 }
 
 .alert.success { color: var(--exito); }
 .alert.error { color: var(--error); }
 
 .profile {
-    background: linear-gradient(180deg, #fffafc 0%, #f8f0ff 100%);
+    background: linear-gradient(180deg, #fffdf9 0%, #f5ebe1 100%);
     border: 1px solid var(--borde);
     border-radius: 16px;
     padding: 24px;
@@ -150,7 +150,7 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f7ecff;
+    background: #f8eee5;
     border: 1px solid var(--borde);
     border-radius: 12px;
     padding: 12px 14px;
